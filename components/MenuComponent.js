@@ -10,8 +10,9 @@ function Menu(props) {
                     title={item.name}
                     subtitle={item.description}
                     hideChevron={true}
+                    onPress={() => props.onPress(item.id)}
                     leftAvatar={{ source: require('./images/uthappizza.png')}}
-                  />
+              />
         );
     };
     return (
@@ -19,7 +20,7 @@ function Menu(props) {
                 data={props.dishes}
                 renderItem={renderMenuItem}
                 keyExtractor={item => item.id.toString()}
-                />
+            />
     );
 }
 export default Menu;
