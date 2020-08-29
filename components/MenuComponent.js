@@ -12,9 +12,9 @@ class Menu extends Component {
         };
     }
 
-    static navigationOptions = {
-        title: 'Menu'
-    };
+    // static navigationOptions = {
+    //     title: 'Menu'
+    // };
 
     render() {
         const renderMenuItem = ({item, index}) => {

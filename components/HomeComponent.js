@@ -37,9 +37,9 @@ class Home extends Component {
         };
     }
 
-    static navigationOptions = {
-        title: 'Home',
-    };
+    // static navigationOptions = {
+    //     title: 'Home',
+    // };
 
     render() {
         
