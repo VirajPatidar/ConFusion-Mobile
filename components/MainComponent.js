@@ -11,6 +11,7 @@ import About from './AboutComponent';
 import Contact from './ContactComponent';
 import { connect } from 'react-redux';
 import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
+import Reservation from './ReservationComponent';
 
 const mapStateToProps = state => {
   return {
@@ -199,6 +200,37 @@ function AboutNavigatorScreen() {
     </AboutNavigator.Navigator>
   );
 }
+const ReservationNavigator = createStackNavigator();
+function ReservationNavigatorScreen() {
+  return (
+    <ReservationNavigator.Navigator
+      initialRouteName="About Us"
+      screenOptions={{
+        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#512DA8" },
+        headerTitleStyle: { color: "#fff" },
+      }}
+    >
+      <ReservationNavigator.Screen
+        name="Reservation"
+        component={Reservation}
+        options={
+          ({navigation}) => ({
+              headerLeft: () => (
+                  <Icon 
+                      name='menu' 
+                      size={24}
+                      color='white'
+                      onPress={() => navigation.toggleDrawer()}
+                  />
+              )
+          
+          })
+       }
+      />
+    </ReservationNavigator.Navigator>
+  );
+}
 
 const Drawer = createDrawerNavigator();
 
@@ -259,6 +291,20 @@ function MainNavigator() {
                   drawerIcon: ({tintColor}) => (
                       <Icon
                           name='info-circle'
+                          type='font-awesome'
+                          size={24}
+                          color={tintColor}
+                      />
+                  )
+              }}                
+          />
+          <Drawer.Screen 
+              name="Reservation"   
+              component={ReservationNavigatorScreen} 
+              options={{
+                  drawerIcon: ({tintColor}) => (
+                      <Icon
+                          name='cutlery'
                           type='font-awesome'
                           size={24}
                           color={tintColor}
