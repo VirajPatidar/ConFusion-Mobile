@@ -23,11 +23,18 @@ const mapStateToProps = state => {
 function RenderDish(props) {
     const dish = props.dish;
     const recognizeDrag = ({ moveX, moveY, dx, dy }) => {
-      if ( dx < -200 )
-      return true;
+      if (dx < -200)
+        return true;
       else
+        return false;
+  }
+
+  const recognizeComment = ({ moveX, moveY, dx, dy }) => {
+    if (dx > 200)
+      return true;
+    else
       return false;
-    }
+  }
     const viewRef = useRef(null);
 
   const panResponder = PanResponder.create({
@@ -46,8 +53,10 @@ function RenderDish(props) {
                   {text: 'OK', onPress: () => {props.favorite ? console.log('Already favorite') : props.onPress()}},
                   ],
                   { cancelable: false }
-              );
-
+                )
+                else if (recognizeComment(gestureState)) {
+                  props.toggleModal()
+                }
           return true;
       }
   })
