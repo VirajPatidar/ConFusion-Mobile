@@ -12,6 +12,7 @@ import Contact from './ContactComponent';
 import { connect } from 'react-redux';
 import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
 import Reservation from './ReservationComponent';
+import Favorites from './FavoriteComponent';
 
 const mapStateToProps = state => {
   return {
@@ -229,6 +230,37 @@ function ReservationNavigatorScreen() {
        }
       />
     </ReservationNavigator.Navigator>
+  )
+}
+const FavoritesNavigator = createStackNavigator();
+function FavoritesNavigatorScreen() {
+  return (
+    <FavoritesNavigator.Navigator
+      initialRouteName="About Us"
+      screenOptions={{
+        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#512DA8" },
+        headerTitleStyle: { color: "#fff" },
+      }}
+    >
+      <FavoritesNavigator.Screen
+        name="Favorites"
+        component={Favorites}
+        options={
+          ({navigation}) => ({
+              headerLeft: () => (
+                  <Icon 
+                      name='menu' 
+                      size={24}
+                      color='white'
+                      onPress={() => navigation.toggleDrawer()}
+                  />
+              )
+          
+          })
+       }
+      />
+    </FavoritesNavigator.Navigator>
   );
 }
 
@@ -291,6 +323,20 @@ function MainNavigator() {
                   drawerIcon: ({tintColor}) => (
                       <Icon
                           name='info-circle'
+                          type='font-awesome'
+                          size={24}
+                          color={tintColor}
+                      />
+                  )
+              }}                
+          />
+          <Drawer.Screen 
+              name="My Favorites"   
+              component={FavoritesNavigatorScreen} 
+              options={{
+                  drawerIcon: ({tintColor}) => (
+                      <Icon
+                          name='heart'
                           type='font-awesome'
                           size={24}
                           color={tintColor}
