@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Text, View, Image, StyleSheet } from 'react-native';
+import { ScrollView, Text, View, Image, StyleSheet, Alert, ToastAndroid } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerItemList } from '@react-navigation/drawer';
@@ -14,6 +14,7 @@ import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/
 import Reservation from './ReservationComponent';
 import Favorites from './FavoriteComponent';
 import Login from './LoginComponent';
+import NetInfo from '@react-native-community/netinfo';
 
 const mapStateToProps = state => {
   return {
@@ -416,7 +417,31 @@ class Main extends Component {
     this.props.fetchComments();
     this.props.fetchPromos();
     this.props.fetchLeaders();
-  }
+
+    // NetInfo.getConnectionInfo()
+    //     .then((connectionInfo) => {
+    //         ToastAndroid.show('Initial Network Connectivity Type: '
+    //             + connectionInfo.type + ', effectiveType: ' + connectionInfo.effectiveType,
+    //             ToastAndroid.LONG)
+    //     });
+
+      NetInfo.addEventListener(this.handleConnectivityChange);
+    }
+  
+    componentWillUnmount() {
+      NetInfo.removeEventListener(this.handleConnectivityChange);
+    }
+  
+    handleConnectivityChange = state => {
+      if (state.isConnected) {
+        ToastAndroid.show('You are now online', ToastAndroid.LONG);
+        this.setState({connection_Status: 'Online'});
+      } 
+      else {
+        ToastAndroid.show('You are now offline!', ToastAndroid.LONG);
+        this.setState({connection_Status: 'Offline'});
+      }
+    };
   
   render() {
     return (

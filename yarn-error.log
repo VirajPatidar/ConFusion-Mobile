@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add expo-mail-composer@~8.2.1
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-community/netinfo
 
 PATH: 
   C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Users\Viraj\AppData\Local\Programs\Python\Python38-32;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Java\jdk-14.0.2\bin;C:\BC5\BIN;C:\Users\Viraj\AppData\Local\Microsoft\WindowsApps;C:\Users\Viraj\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Viraj\AppData\Roaming\npm;C:\Users\Viraj\AppData\Local\Yarn\bin;C:\src\flutter\bin;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'F:\Computer Science\COURSERA\Full-Stack Web Development with React\Multiplatform Mobile Development with React Native\ReactNative\confusion\node_modules\@babel\compat-data\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'F:\Computer Science\COURSERA\Full-Stack Web Development with React\Multiplatform Mobile Development with React Native\ReactNative\confusion\node_modules\@babel\helper-compilation-targets\node_modules\.bin'
 
 npm manifest: 
   {
@@ -29,10 +29,16 @@ npm manifest:
     "dependencies": {
       "@react-native-community/async-storage": "^1.12.0",
       "@react-native-community/masked-view": "0.1.10",
+      "@react-navigation/bottom-tabs": "^5.8.0",
       "@react-navigation/drawer": "^5.9.0",
       "@react-navigation/native": "^5.7.3",
       "@react-navigation/stack": "^5.9.0",
       "expo": "~38.0.8",
+      "expo-asset": "~8.1.7",
+      "expo-camera": "~8.3.1",
+      "expo-image-manipulator": "~8.2.1",
+      "expo-image-picker": "~8.3.0",
+      "expo-mail-composer": "~8.2.1",
       "expo-permissions": "~9.0.1",
       "expo-secure-store": "~9.0.1",
       "expo-status-bar": "^1.0.2",
@@ -1297,6 +1303,14 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
     integrity sha512-rk4sWFsmtOw8oyx8SD3KSvawwaK7gRBSEIy2TAwURyGt+3TizssXP1r8nx3zY+R7v2vYYHXZ+k2/GULAT/bcaQ==
   
+  "@react-navigation/bottom-tabs@^5.8.0":
+    version "5.8.0"
+    resolved "https://registry.yarnpkg.com/@react-navigation/bottom-tabs/-/bottom-tabs-5.8.0.tgz#d7386809bceeead0adcaacf61b6563be9cefd5cb"
+    integrity sha512-geF/FSIg6cArY5jLwJJZrp7PDzLoSrONkCgq9n/4yKxtQapB/Pn5ljSHCNRGNkkb/+g8zqRQmEL5yX4DOja0OA==
+    dependencies:
+      color "^3.1.2"
+      react-native-iphone-x-helper "^1.2.1"
+  
   "@react-navigation/core@^5.12.3":
     version "5.12.3"
     resolved "https://registry.yarnpkg.com/@react-navigation/core/-/core-5.12.3.tgz#0484fcca290569a0dc10b70b99f00edd3f1fd93c"
@@ -2555,6 +2569,16 @@ Lockfile:
       path-browserify "^1.0.0"
       url-parse "^1.4.4"
   
+  expo-camera@~8.3.1:
+    version "8.3.1"
+    resolved "https://registry.yarnpkg.com/expo-camera/-/expo-camera-8.3.1.tgz#e17c080c4aafd71f66495c2b6dfc53dcd31b0368"
+    integrity sha512-weFanDVsJKAbm5g90zWIUD4zVrXKoQq7g2BTg4zy4p24YsGfXKYRH4ja0YRgr3Ci/abGaaRNZjsPMJiNskR+tA==
+    dependencies:
+      fbjs "1.0.0"
+      invariant "2.2.4"
+      lodash "^4.6.0"
+      prop-types "^15.6.0"
+  
   expo-constants@~9.1.1:
     version "9.1.1"
     resolved "https://registry.yarnpkg.com/expo-constants/-/expo-constants-9.1.1.tgz#bca141ee3d4550e308798128f66c6d9c6a206ca1"
@@ -2585,6 +2609,19 @@ Lockfile:
       fbjs "1.0.0"
       fontfaceobserver "^2.1.0"
   
+  expo-image-manipulator@~8.2.1:
+    version "8.2.1"
+    resolved "https://registry.yarnpkg.com/expo-image-manipulator/-/expo-image-manipulator-8.2.1.tgz#8b9c9dc40615f045d49b3a3d53e41e3dbede1777"
+    integrity sha512-xz8gG6NWAEDzPe4rbHJCpCrNpfHWh5GBghBRRB6waZs3IMFTvGK/gUyor53xl+9VLi0f/ypGeWPyxl25GeBkMw==
+  
+  expo-image-picker@~8.3.0:
+    version "8.3.0"
+    resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-8.3.0.tgz#5a9daacbc1afa7fdbfd31edb22818524ad0b85e2"
+    integrity sha512-HCF7SumPE4jXH+EhJ19Xw6G8Lxpms1z6Hxdq/kLlzvZGdzH4ZFBqp3NyTO7dtm0dXtjduljpNK7kQfwWtvmIWQ==
+    dependencies:
+      expo-permissions "~9.0.1"
+      uuid "7.0.2"
+  
   expo-keep-awake@~8.2.1:
     version "8.2.1"
     resolved "https://registry.yarnpkg.com/expo-keep-awake/-/expo-keep-awake-8.2.1.tgz#a7956ad0fa80eb6ac6a28bb7242408e87c493677"
@@ -2612,6 +2649,13 @@ Lockfile:
     integrity sha512-MixKapt3nijAxyjIISscBzdKi8bwh0H/dWYsL2mCofrjguFHOh2gP07h95902lekb7NVqybl5AIQRW5cvrG4rQ==
     dependencies:
       invariant "^2.2.4"
+  
+  expo-mail-composer@~8.2.1:
+    version "8.2.1"
+    resolved "https://registry.yarnpkg.com/expo-mail-composer/-/expo-mail-composer-8.2.1.tgz#26168b747606a9531801f1322b1690aa22bfe7db"
+    integrity sha512-srZ+yyevorpMONqXoUYAc5alLPix8xCZXhnatyXHPS1a11OOSsjtURjeK0CL4okmIkCSyw2Ug3W6GXfxVgv7Qw==
+    dependencies:
+      query-string "^6.2.0"
   
   expo-permissions@~9.0.1:
     version "9.0.1"
@@ -3168,7 +3212,7 @@ Lockfile:
       strip-ansi "^4.0.0"
       through "^2.3.6"
   
-  invariant@^2.2.2, invariant@^2.2.4:
+  invariant@2.2.4, invariant@^2.2.2, invariant@^2.2.4:
     version "2.2.4"
     resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
     integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
@@ -4582,7 +4626,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.4.tgz#9090b290d1f91728d3c22e54843ca44aea5ab687"
     integrity sha512-A1kFqHekCTM7cz0udomYUoYNWjBebHm/5wzU/XqrBRBNWectVH0QIiN+NEcZ0Dte5hvzHwbr8+XQmguPhJ6WdQ==
   
-  query-string@^6.13.1:
+  query-string@^6.13.1, query-string@^6.2.0:
     version "6.13.1"
     resolved "https://registry.yarnpkg.com/query-string/-/query-string-6.13.1.tgz#d913ccfce3b4b3a713989fe6d39466d92e71ccad"
     integrity sha512-RfoButmcK+yCta1+FuU8REvisx1oEzhMKwhLUNcepQTPGcNMp1sIqjnfCtfnvGSQZQEhaBHvccujtWoUV3TTbA==
@@ -5716,6 +5760,11 @@ Lockfile:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
     integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+  
+  uuid@7.0.2:
+    version "7.0.2"
+    resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.2.tgz#7ff5c203467e91f5e0d85cfcbaaf7d2ebbca9be6"
+    integrity sha512-vy9V/+pKG+5ZTYKf+VcphF5Oc6EFiu3W8Nv3P3zIh0EqVI80ZxOzuPfe9EHjkFNvf8+xuTHVeei4Drydlx4zjw==
   
   uuid@^3.3.2, uuid@^3.4.0:
     version "3.4.0"
