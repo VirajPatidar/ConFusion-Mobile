@@ -13,6 +13,7 @@ import { connect } from 'react-redux';
 import { fetchDishes, fetchComments, fetchPromos, fetchLeaders } from '../redux/ActionCreators';
 import Reservation from './ReservationComponent';
 import Favorites from './FavoriteComponent';
+import Login from './LoginComponent';
 
 const mapStateToProps = state => {
   return {
@@ -263,6 +264,37 @@ function FavoritesNavigatorScreen() {
     </FavoritesNavigator.Navigator>
   );
 }
+const LoginNavigator = createStackNavigator();
+function LoginNavigatorScreen() {
+  return (
+    <LoginNavigator.Navigator
+      initialRouteName="About Us"
+      screenOptions={{
+        headerTintColor: "#fff",
+        headerStyle: { backgroundColor: "#512DA8" },
+        headerTitleStyle: { color: "#fff" },
+      }}
+    >
+      <LoginNavigator.Screen
+        name="Login"
+        component={Login}
+        options={
+          ({navigation}) => ({
+              headerLeft: () => (
+                  <Icon 
+                      name='menu' 
+                      size={24}
+                      color='white'
+                      onPress={() => navigation.toggleDrawer()}
+                  />
+              )
+          
+          })
+       }
+      />
+    </LoginNavigator.Navigator>
+  );
+}
 
 const Drawer = createDrawerNavigator();
 
@@ -273,6 +305,20 @@ function MainNavigator() {
           drawerStyle={{ backgroundColor:'#D1C4E9' }}
           drawerContent={props => <CustomDrawerContentComponent {...props}/>}
       >
+          <Drawer.Screen 
+              name="Login"   
+              component={LoginNavigatorScreen} 
+              options={{
+                  drawerIcon: ({tintColor}) => (
+                      <Icon
+                          name='sign-in'
+                          type='font-awesome'
+                          size={24}
+                          color={tintColor}
+                      />
+                  )
+              }}                
+          />
           <Drawer.Screen 
               name="Home"       
               component={HomeNavigatorScreen} 

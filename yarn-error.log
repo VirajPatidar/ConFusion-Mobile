@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add @react-native-community/async-storage
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add expo-mail-composer@~8.2.1
 
 PATH: 
   C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\WINDOWS\System32\OpenSSH\;C:\Users\Viraj\AppData\Local\Programs\Python\Python38-32;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files (x86)\Yarn\bin\;C:\Program Files\Java\jdk-14.0.2\bin;C:\BC5\BIN;C:\Users\Viraj\AppData\Local\Microsoft\WindowsApps;C:\Users\Viraj\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Viraj\AppData\Roaming\npm;C:\Users\Viraj\AppData\Local\Yarn\bin;C:\src\flutter\bin;
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'F:\Computer Science\COURSERA\Full-Stack Web Development with React\Multiplatform Mobile Development with React Native\ReactNative\confusion\node_modules\@babel\plugin-transform-runtime\node_modules\.bin'
+  Error: EPERM: operation not permitted, unlink 'F:\Computer Science\COURSERA\Full-Stack Web Development with React\Multiplatform Mobile Development with React Native\ReactNative\confusion\node_modules\@babel\compat-data\node_modules\.bin'
 
 npm manifest: 
   {
@@ -27,11 +27,14 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/async-storage": "^1.12.0",
       "@react-native-community/masked-view": "0.1.10",
       "@react-navigation/drawer": "^5.9.0",
       "@react-navigation/native": "^5.7.3",
       "@react-navigation/stack": "^5.9.0",
       "expo": "~38.0.8",
+      "expo-permissions": "~9.0.1",
+      "expo-secure-store": "~9.0.1",
       "expo-status-bar": "^1.0.2",
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
@@ -1174,6 +1177,13 @@ Lockfile:
       "@types/istanbul-reports" "^1.1.1"
       "@types/yargs" "^15.0.0"
       chalk "^3.0.0"
+  
+  "@react-native-community/async-storage@^1.12.0":
+    version "1.12.0"
+    resolved "https://registry.yarnpkg.com/@react-native-community/async-storage/-/async-storage-1.12.0.tgz#d2fc65bc08aa1c3e9514bbe9fe7095eab8e8aca3"
+    integrity sha512-y3zVxuVyiOxI8TXrvajmYfDbIt2vFNxzV5MiA28v15DQTxDk6uJH3rpc9my+la7u2Tiwt3PpdU2+59ZgZ4h7wA==
+    dependencies:
+      deep-assign "^3.0.0"
   
   "@react-native-community/cli-debugger-ui@^4.9.0":
     version "4.9.0"
@@ -2607,6 +2617,11 @@ Lockfile:
     version "9.0.1"
     resolved "https://registry.yarnpkg.com/expo-permissions/-/expo-permissions-9.0.1.tgz#dc10b58654bbe39bbbed5827369942b01b08055e"
     integrity sha512-CosJgy8XQRN/OFG2JTQDcFxz3XTGi27coCMym/hVXWtQfk0z6PwdRG5IXHfLGuSckwIcgmirrwm2+Zc0X3MmNg==
+  
+  expo-secure-store@~9.0.1:
+    version "9.0.1"
+    resolved "https://registry.yarnpkg.com/expo-secure-store/-/expo-secure-store-9.0.1.tgz#e564a2d5392cd1ab883b9b6a7e261c1815d15788"
+    integrity sha512-+XgSZTelr57AyIJIGPcB/+QMrrm7wd8KFaF+TD8eJFwEN3B7s+tZyNoPH2JaJkAY0yh9FqcGG4kE3/YgK7GY3Q==
   
   expo-splash-screen@^0.5.0:
     version "0.5.0"
